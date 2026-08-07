@@ -99,7 +99,7 @@ docker build -t cats-dogs-api:local .
 docker compose up -d
 
 curl http://localhost:8000/health
-curl -X POST -F "file=@data/processed/test/dogs/dogs_00001.jpg" http://localhost:8000/predict
+curl -X POST -F "file=@$(ls data/processed/test/dogs/*.jpg | head -1)" http://localhost:8000/predict
 ```
 
 Sample response:
