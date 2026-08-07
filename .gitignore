@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# DVC handles the data, Git only carries the pointer files
+/data/raw
+/data/processed
+
+mlruns/
+mlartifacts/
+mlflow.db
+logs/
+.DS_Store

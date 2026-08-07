@@ -1,0 +1,31 @@
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  image_size: 224
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  seed: 42
+  # Cap per class keeps CPU training sensible. Set to 0 to use everything.
+  limit_per_class: 3000
+
+train:
+  epochs: 5
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_workers: 2
+  seed: 42
+
+model:
+  path: models/cats_dogs_cnn.pt
+  classes:
+    - cats
+    - dogs
+
+mlflow:
+  # SQLite backend - works with both MLflow 2.x and 3.x and survives the
+  # file-store deprecation. View it with:
+  #   mlflow ui --backend-store-uri sqlite:///mlflow.db
+  tracking_uri: sqlite:///mlflow.db
+  experiment_name: cats-vs-dogs

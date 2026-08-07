@@ -1,0 +1,38 @@
+stages:
+  prepare:
+    cmd: python -m src.data_prep
+    deps:
+      - src/data_prep.py
+      - data/raw
+    params:
+      - data.image_size
+      - data.train_ratio
+      - data.val_ratio
+      - data.seed
+      - data.limit_per_class
+    outs:
+      - data/processed
+
+  train:
+    cmd: python -m src.train
+    deps:
+      - src/train.py
+      - src/model.py
+      - src/dataset.py
+      - data/processed
+    params:
+      - train.epochs
+      - train.batch_size
+      - train.learning_rate
+      - train.weight_decay
+    outs:
+      - models/cats_dogs_cnn.pt:
+          cache: false
+    metrics:
+      - reports/metrics.json:
+          cache: false
+    plots:
+      - reports/loss_curves.png:
+          cache: false
+      - reports/confusion_matrix.png:
+          cache: false
