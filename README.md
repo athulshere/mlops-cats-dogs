@@ -27,6 +27,8 @@ post-deployment monitoring.
 
 ## Setup
 
+Step-by-step local instructions with troubleshooting are in **[RUNBOOK.md](RUNBOOK.md)**.
+
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements-dev.txt
@@ -215,6 +217,7 @@ figure in `reports/metrics.json` is the drift signal.
 ## Handy commands
 
 ```bash
+make verify         # check the machine has what it needs
 make install        # dependencies
 make prepare        # data prep
 make train          # training + MLflow

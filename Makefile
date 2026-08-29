@@ -1,4 +1,7 @@
-.PHONY: install prepare train test serve docker-build docker-run smoke monitor k8s-deploy clean
+.PHONY: verify install prepare train test serve docker-build docker-run smoke monitor k8s-deploy clean
+
+verify:
+	python scripts/verify_setup.py
 
 install:
 	pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements-dev.txt
