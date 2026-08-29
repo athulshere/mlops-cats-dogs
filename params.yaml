@@ -7,10 +7,10 @@ data:
   test_ratio: 0.1
   seed: 42
   # Cap per class keeps CPU training sensible. Set to 0 to use everything.
-  limit_per_class: 3000
+  limit_per_class: 6000
 
 train:
-  epochs: 5
+  epochs: 12
   batch_size: 32
   learning_rate: 0.001
   weight_decay: 0.0001

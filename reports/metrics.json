@@ -1,6 +1,6 @@
 {
-  "best_val_accuracy": 1.0,
-  "test_accuracy": 1.0,
-  "test_loss": 0.10053697973489761,
-  "test_f1_macro": 1.0
+  "best_val_accuracy": 0.7883333333333333,
+  "test_accuracy": 0.7808333333333334,
+  "test_loss": 0.46316622018814085,
+  "test_f1_macro": 0.7800634025083644
 }
