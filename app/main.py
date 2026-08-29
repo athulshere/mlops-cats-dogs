@@ -18,15 +18,23 @@ from src.inference import CatsDogsClassifier, InvalidImageError
 APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
 MAX_UPLOAD_BYTES = 8 * 1024 * 1024
 LOG_DIR = Path(os.getenv("LOG_DIR", "logs"))
-LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 logger = logging.getLogger("cats-dogs-api")
 logger.setLevel(logging.INFO)
+
 if not logger.handlers:
-    file_handler = logging.FileHandler(LOG_DIR / "requests.log")
-    file_handler.setFormatter(logging.Formatter("%(message)s"))
-    logger.addHandler(file_handler)
     logger.addHandler(logging.StreamHandler())
+
+    # A bind-mounted log directory is often owned by root while the container
+    # runs as a normal user. Stdout logging still works, so carry on without
+    # the file rather than refusing to start.
+    try:
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        file_handler = logging.FileHandler(LOG_DIR / "requests.log")
+        file_handler.setFormatter(logging.Formatter("%(message)s"))
+        logger.addHandler(file_handler)
+    except OSError as error:
+        logger.warning(json.dumps({"event": "file_logging_disabled", "reason": str(error)}))
 
 
 class Metrics:

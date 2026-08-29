@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: ghcr.io/OWNER/REPO:latest
+          image: ghcr.io/athulshere/mlops-cats-dogs:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000

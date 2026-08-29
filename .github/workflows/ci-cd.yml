@@ -101,7 +101,12 @@ jobs:
           echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
 
       - name: Start the service
-        run: docker compose up -d
+        run: |
+          # The container runs as a non-root user, so the bind-mounted log
+          # directory has to be writable by it.
+          mkdir -p logs && chmod 777 logs
+          docker compose up -d
+          docker compose ps
 
       - name: Smoke test the deployment
         run: |
@@ -110,7 +115,9 @@ jobs:
 
       - name: Show container logs if anything failed
         if: failure()
-        run: docker compose logs --tail 100
+        run: |
+          docker compose ps -a
+          docker compose logs --tail 100
 
       - name: Tear down
         if: always()
