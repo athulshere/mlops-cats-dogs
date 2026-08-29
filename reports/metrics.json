@@ -1,0 +1,6 @@
+{
+  "best_val_accuracy": 1.0,
+  "test_accuracy": 1.0,
+  "test_loss": 0.10053697973489761,
+  "test_f1_macro": 1.0
+}

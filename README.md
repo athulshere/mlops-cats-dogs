@@ -115,7 +115,7 @@ Sample response:
 }
 ```
 
-Every key library is pinned in `requirements.txt`. The Dockerfile installs torch
+Every key library is pinned in `requirements.txt` (verified on Python 3.11-3.13). The Dockerfile installs torch
 from the CPU wheel index — the default Linux wheel drags in the whole CUDA stack
 and adds several gigabytes for no benefit.
 

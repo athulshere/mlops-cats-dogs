@@ -1,10 +1,10 @@
 -r requirements.txt
 
 # Training, tracking and testing only - not shipped in the container.
-mlflow==2.19.0
-scikit-learn==1.5.2
-matplotlib==3.9.2
-dvc==3.58.0
-pytest==8.3.4
+mlflow==3.15.1
+scikit-learn==1.8.0
+matplotlib==3.10.8
+dvc==3.67.1
+pytest==9.1.1
 httpx==0.28.1
-requests==2.32.3
+requests==2.33.1

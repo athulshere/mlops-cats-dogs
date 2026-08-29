@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-08-29T07:18:29.486841+00:00",
+  "endpoint": "http://127.0.0.1:8002",
+  "requests": 12,
+  "accuracy": 1.0,
+  "latency_ms": {
+    "mean": 32.99,
+    "p50": 32.53,
+    "p95": 37.32,
+    "max": 37.32
+  },
+  "confusion_matrix": {
+    "cats": {
+      "cats": 6,
+      "dogs": 0
+    },
+    "dogs": {
+      "cats": 0,
+      "dogs": 6
+    }
+  },
+  "samples": [
+    {
+      "file": "cats_00010.jpg",
+      "true_label": "cats",
+      "predicted": "cats",
+      "confidence": 0.9157,
+      "latency_ms": 37.32
+    },
+    {
+      "file": "cats_00011.jpg",
+      "true_label": "cats",
+      "predicted": "cats",
+      "confidence": 0.9159,
+      "latency_ms": 33.72
+    },
+    {
+      "file": "cats_00005.jpg",
+      "true_label": "cats",
+      "predicted": "cats",
+      "confidence": 0.9156,
+      "latency_ms": 32.43
+    },
+    {
+      "file": "cats_00000.jpg",
+      "true_label": "cats",
+      "predicted": "cats",
+      "confidence": 0.9158,
+      "latency_ms": 32.61
+    },
+    {
+      "file": "dogs_00007.jpg",
+      "true_label": "dogs",
+      "predicted": "dogs",
+      "confidence": 0.8929,
+      "latency_ms": 32.51
+    },
+    {
+      "file": "dogs_00003.jpg",
+      "true_label": "dogs",
+      "predicted": "dogs",
+      "confidence": 0.8929,
+      "latency_ms": 32.93
+    },
+    {
+      "file": "dogs_00002.jpg",
+      "true_label": "dogs",
+      "predicted": "dogs",
+      "confidence": 0.8932,
+      "latency_ms": 32.42
+    },
+    {
+      "file": "cats_00008.jpg",
+      "true_label": "cats",
+      "predicted": "cats",
+      "confidence": 0.9155,
+      "latency_ms": 31.96
+    },
+    {
+      "file": "dogs_00006.jpg",
+      "true_label": "dogs",
+      "predicted": "dogs",
+      "confidence": 0.8935,
+      "latency_ms": 32.53
+    },
+    {
+      "file": "cats_00001.jpg",
+      "true_label": "cats",
+      "predicted": "cats",
+      "confidence": 0.9162,
+      "latency_ms": 31.52
+    },
+    {
+      "file": "dogs_00004.jpg",
+      "true_label": "dogs",
+      "predicted": "dogs",
+      "confidence": 0.8926,
+      "latency_ms": 31.92
+    },
+    {
+      "file": "dogs_00009.jpg",
+      "true_label": "dogs",
+      "predicted": "dogs",
+      "confidence": 0.8934,
+      "latency_ms": 33.98
+    }
+  ]
+}

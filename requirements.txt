@@ -1,12 +1,14 @@
 # Runtime dependencies for the inference service.
-# On Linux/CI install torch from the CPU index to keep the image small:
+# Tested on Python 3.11-3.13.
+#
+# Install torch from the CPU wheel index so pip does not drag in the CUDA stack:
 #   pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
-torch==2.5.1
-torchvision==0.20.1
-numpy==1.26.4
-pillow==10.4.0
-fastapi==0.115.6
-uvicorn[standard]==0.34.0
-python-multipart==0.0.20
-pydantic==2.10.4
-PyYAML==6.0.2
+torch==2.13.0
+torchvision==0.28.0
+numpy==2.4.4
+pillow==12.1.1
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+python-multipart==0.0.32
+pydantic==2.13.5
+PyYAML==6.0.3

@@ -11,7 +11,7 @@ Install these if you don't have them:
 
 | Tool | Notes |
 |---|---|
-| Python 3.11 | 3.10 and 3.12 also work |
+| Python 3.11, 3.12 or 3.13 | `python3 -V` to check. 3.10 and below won't work — numpy and scikit-learn dropped it |
 | Docker Desktop | **Launch it.** The daemon has to be running, not just installed |
 | Git | `git --version` to check |
 | VS Code | Plus the **Python** and **Docker** extensions |
@@ -250,6 +250,11 @@ The checkpoint wasn't committed. Redo step 6.
 **Port 8000 already in use**
 Something's still bound to it. `lsof -ti:8000 | xargs kill` on macOS/Linux, or
 `docker compose down` if it's the container.
+
+**`Could not find a version that satisfies the requirement torch==X`**
+The pinned torch build has aged out of the CPU wheel index. Look at the versions
+pip lists in the error, pick the newest, and set torch plus its matching
+torchvision in `requirements.txt` — the pairs go 2.11/0.26, 2.12/0.27, 2.13/0.28.
 
 **Training accuracy stuck near 50%**
 The model is guessing, which usually means only one class made it through data
