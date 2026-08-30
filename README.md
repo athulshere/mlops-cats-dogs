@@ -6,6 +6,11 @@ post-deployment monitoring.
 
 **Course:** MLOps (S1-25_AIMLCZG523) · Assignment 2
 
+Repository: https://github.com/athulshere/mlops-cats-dogs
+
+Screen recording: recording/MLOPS_Assignment_Recording.mp4 (4 min 43 s) .
+Also on Drive: https://drive.google.com/file/d/1P2dymokxOfR4sF242FEmqWRdgIO21PZa/view?usp=drive_link
+
 ---
 
 ## What's in here
