@@ -15,7 +15,7 @@ from fastapi.responses import PlainTextResponse
 
 from src.inference import CatsDogsClassifier, InvalidImageError
 
-APP_VERSION = os.getenv("APP_VERSION", "1.0.0")
+APP_VERSION = os.getenv("APP_VERSION", "1.2.0")
 MAX_UPLOAD_BYTES = 8 * 1024 * 1024
 LOG_DIR = Path(os.getenv("LOG_DIR", "logs"))
 
